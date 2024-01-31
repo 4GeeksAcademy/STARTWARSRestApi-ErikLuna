@@ -91,6 +91,7 @@ def create_favorite_planet(planets_id):
 @app.route('/favorite/people/<int:people_id>', methods=['DELETE'])
 def delete_favorite_person(people_id):
     delete_favorite = FavoritePeople.query.filter_by(id=people_id).first()
+    console.log(People_id);
     db.session.delete(delete_favorite)
     db.session.commit()
     return jsonify(), 200
